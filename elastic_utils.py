@@ -53,7 +53,7 @@ def calculate_elasticity(
     atoms: Atoms,
     calculator: Calculator,
     norm_strains: Sequence[float] | float = (-0.01, -0.005, 0.005, 0.01),
-    shear_strains: Sequence[float] | float = (-0.06, -0.03, 0.03, 0.06),
+    shear_strains: Sequence[float] | float = (-0.01, -0.005, 0.005, 0.01),
     relax_initial: bool = True,
     relax_strained: bool = True,
     use_equilibrium_stress: bool = True,
