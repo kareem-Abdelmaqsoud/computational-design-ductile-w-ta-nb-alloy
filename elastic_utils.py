@@ -7,7 +7,7 @@ from ase.filters import Filter
 def relax_atoms(
     atoms: Atoms,
     steps: int = 500,
-    fmax: float = 0.02,
+    fmax: float = 0.01,
     optimizer_cls: None = None,
     fix_symmetry: bool = False,
     cell_filter_cls: type[Filter] | None = None,
@@ -37,7 +37,9 @@ def relax_atoms(
     optimizer_cls = FIRE if optimizer_cls is None else optimizer_cls
     opt = optimizer_cls(_atoms, logfile=None)
     opt.run(fmax=fmax, steps=steps)
-
+    print(opt.nsteps)
+    if opt.nsteps == steps:
+        print("WARNING: UNCONVERGED RELAXATION")
     atoms.info |= {"opt_nsteps": opt.nsteps}
     return atoms
 
@@ -92,7 +94,7 @@ def calculate_elasticity(
         Strain.from_deformation(deformation)
         for deformation in deformed_structure_set.deformations
     ]
-
+    # print("Number of Deformations: ", len(deformed_structure_set))
     stresses = []
     for deformed_structure in deformed_structure_set:
         atoms = deformed_structure.to_ase_atoms()

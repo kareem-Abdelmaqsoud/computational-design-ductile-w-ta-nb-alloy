@@ -1,0 +1,8 @@
+Sample,W Content,Std. Dev,Image Size (mm^2),Crack Fraction (mm/mm^2),Std. Deviation (from 4-tile image),Notes
+W20,23,1,0.56,0,0,High-res image with no cracks visible
+W30,30,1.5,2.65,0,0,
+W50-1,51,3,2.35,2.97,1.65,Also noted as W43 in some presentations
+W50-2,56,3.5,2.02,7.67,0.87,Second build
+W55,64,2.3,12.25,7.94,3.97,High standard deviation due to inclusion of low- and high-cracking regions in overview image. I suggest keeping this wide error bar and explaining its significance in the text.
+W60,53,2.5,2.65,9.22,0.59,Exclude. Non-melted tungsten visible. This added excess cracks and low W content.
+W80,80,3,2,10.18,4.67,High standard deviation due to inclusion of low- and high-cracking regions in overview image.
