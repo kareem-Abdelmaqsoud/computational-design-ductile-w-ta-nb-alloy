@@ -37,7 +37,6 @@ def relax_atoms(
     optimizer_cls = FIRE if optimizer_cls is None else optimizer_cls
     opt = optimizer_cls(_atoms, logfile=None)
     opt.run(fmax=fmax, steps=steps)
-    print(opt.nsteps)
     if opt.nsteps == steps:
         print("WARNING: UNCONVERGED RELAXATION")
     atoms.info |= {"opt_nsteps": opt.nsteps}
@@ -55,7 +54,7 @@ def calculate_elasticity(
     atoms: Atoms,
     calculator: Calculator,
     norm_strains: Sequence[float] | float = (-0.01, -0.005, 0.005, 0.01),
-    shear_strains: Sequence[float] | float = (-0.01, -0.005, 0.005, 0.01),
+    shear_strains: Sequence[float] | float = (-0.06, -0.03, 0.03, 0.06),
     relax_initial: bool = True,
     relax_strained: bool = True,
     use_equilibrium_stress: bool = True,
