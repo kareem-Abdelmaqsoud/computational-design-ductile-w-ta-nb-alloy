@@ -1,3 +1,6 @@
 __pycache__/
 .DS_Store
 vasp_internal_elastic/
+.ipynb_checkpoints/
+miscellaneous_code/.ipynb_checkpoints/
+paper_figures/.ipynb_checkpoints/
